@@ -3,7 +3,7 @@ using namespace std;
 
 class NumberGuessingGame {
 private:     //Encapsulation
-    int num;
+    int num; 
     int tries;
 
 public:
