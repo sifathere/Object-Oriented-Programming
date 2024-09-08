@@ -66,15 +66,36 @@ public:
 };
 
 int main() {
-    SavingsAccount mySavings(101, "John Doe", 1000.0, 5.0);
+    int accNum;
+    string accName;
+    double initialBalance;
+    double interestRate;
+
+    cout << "Enter Account Number: ";
+    cin >> accNum;
+    cout << "Enter Account Holder Name: ";
+    cin.ignore();
+    getline(cin, accName);
+    cout << "Enter Initial Balance: ";
+    cin >> initialBalance;
+    cout << "Enter Interest Rate (%): ";
+    cin >> interestRate;
+
+    SavingsAccount mySavings(accNum, accName, initialBalance, interestRate);
 
     mySavings.display();
     cout << endl;
 
-    mySavings.deposit(500);
+    double depositAmount;
+    cout << "Enter amount to deposit: ";
+    cin >> depositAmount;
+    mySavings.deposit(depositAmount);
     cout << endl;
 
-    mySavings.withdraw(200);
+    double withdrawAmount;
+    cout << "Enter amount to withdraw: ";
+    cin >> withdrawAmount;
+    mySavings.withdraw(withdrawAmount);
     cout << endl;
 
     mySavings.addInterest();
@@ -84,4 +105,3 @@ int main() {
 
     return 0;
 }
-
